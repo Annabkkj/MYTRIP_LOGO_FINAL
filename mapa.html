@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYTRIP — Mapa de Destinos</title>
+  <meta name="description" content="Mapa visual estilizado com todos os destinos, países explorados e próximas viagens cadastradas no MYTRIP.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body data-page="mapa">
+
+  <!-- CABEÇALHO & NAVEGAÇÃO -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand" title="MYTRIP Início">
+        <div class="brand-icon"><img src="assets/mytrip-logo.png" alt="Logo MYTRIP"></div>
+        <span>MYTRIP</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação Principal">
+        <a href="index.html">Home</a>
+        <a href="viagens.html">Viagens</a>
+        <a href="mapa.html" class="active">Mapa</a>
+        <a href="memorias.html">Memórias</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="nova-viagem.html" class="btn-header-new">+ Nova viagem</a>
+        <button class="mobile-toggle" aria-label="Abrir menu de navegação">☰</button>
+      </div>
+    </div>
+
+    <!-- Menu Dropdown Mobile -->
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="viagens.html">Viagens</a>
+      <a href="mapa.html" class="active">Mapa</a>
+      <a href="memorias.html">Memórias</a>
+      <a href="perfil.html">Perfil</a>
+      <a href="nova-viagem.html" class="btn-mobile-new">+ Nova viagem</a>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+
+    <!-- TÍTULO DA PÁGINA -->
+    <section class="section-header fade-in visible" style="margin-top: 8px;">
+      <div class="section-header-text">
+        <small>VISUALIZAÇÃO GLOBAL</small>
+        <h1>Mapa de Destinos 🗺️</h1>
+        <p>Acompanhe visualmente cada canto do planeta que você visitou ou planeja conhecer.</p>
+      </div>
+
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <span class="tag-pill">🟢 Visitada</span>
+        <span class="tag-pill">🔵 Planejada</span>
+        <a href="nova-viagem.html" class="btn btn-primary btn-sm">+ Novo destino</a>
+      </div>
+    </section>
+
+    <!-- LAYOUT DO MAPA (MAPA + LISTA LATERAL) -->
+    <div class="map-page-layout fade-in visible">
+      
+      <!-- PALCO DO MAPA -->
+      <div class="map-card-wrapper">
+        <div class="map-stage real-map-stage" id="map-stage">
+          <div id="real-map" aria-label="Mapa mundial interativo dos seus destinos"></div>
+        </div>
+
+        <div class="real-map-legend">
+          <span><i class="legend-dot visited"></i> Lugares que já visitei</span>
+          <span><i class="legend-dot planned"></i> Lugares que quero conhecer</span>
+          <span>🌍 Mapa real baseado no OpenStreetMap</span>
+        </div>
+      </div>
+
+      <!-- PAINEL LATERAL DE DESTINOS -->
+      <aside class="map-sidebar">
+        <div class="map-sidebar-header">
+          <h3>Destinos no Mapa</h3>
+        </div>
+
+        <div class="map-destinations-list" id="map-destinations-list">
+          <!-- Gerado dinamicamente via script.js -->
+        </div>
+
+        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+          <a href="nova-viagem.html" class="btn btn-primary" style="width: 100%;">+ Adicionar Novo Destino</a>
+        </div>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">MYTRIP</div>
+      <p class="footer-tagline">Explore novos horizontes. Registre cada detalhe. Reviva para sempre.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="viagens.html">Viagens</a>
+        <a href="mapa.html">Mapa</a>
+        <a href="memorias.html">Memórias</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="nova-viagem.html">Nova Viagem</a>
+      </div>
+      <small style="color: #79979D; margin-top: 12px;">© MYTRIP — Diário de Viagens Pessoal. Dados salvos localmente.</small>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
